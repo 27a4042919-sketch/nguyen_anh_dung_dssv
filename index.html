@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hệ Thống Quản Lý Sinh Viên HVNH</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</head>
+<body>
+
+    <div class="dashboard">
+        <main class="main-content">
+            <header class="header">
+                <div>
+                    <h1 class="page-title"><i class="fas fa-graduation-cap"></i> Quản Lý Sinh Viên & Email</h1>
+                    <p class="subtitle">Tự động trích xuất thông tin và khởi tạo Email định danh HVNH</p>
+                </div>
+            </header>
+
+            <section class="upload-section">
+                <div class="upload-card">
+                    <div class="upload-icon"><i class="fas fa-cloud-upload-alt"></i></div>
+                    <h3>Tải lên danh sách lớp</h3>
+                    <p>Hỗ trợ file Excel (.xlsx, .xls). Hệ thống tự động bỏ qua cột STT và dòng tiêu đề.</p>
+                    <input type="file" id="uploadExcel" accept=".xlsx, .xls" hidden>
+                    <button class="btn-upload" onclick="document.getElementById('uploadExcel').click()">
+                        <i class="fas fa-file-excel"></i> Chọn file Excel
+                    </button>
+                </div>
+            </section>
+
+            <section class="data-section">
+                <div class="table-container">
+                    <table id="studentTable">
+                        <thead>
+                            <tr>
+                                <th>Họ và Tên</th>
+                                <th>Mã Sinh Viên</th>
+                                <th>Khóa</th>
+                                <th>Khoa / Chuyên Ngành</th>
+                                <th>Email Định Danh</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="5" class="empty-state">
+                                    Vui lòng tải lên file Excel để hiển thị danh sách sinh viên.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
